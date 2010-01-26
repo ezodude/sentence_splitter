@@ -3,7 +3,7 @@ require 'sinatra/base'
 require 'json'
 
 %w{jwnl-1.3.3.jar  maxent-2.5.2.jar  opennlp-tools-1.4.3.jar  trove.jar}.each do |jar|
-  require File.dirname(__FILE__) + "/" + jar
+  require File.dirname(__FILE__) + "/java/" + jar
 end
 
 def opennlp

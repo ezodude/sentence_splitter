@@ -1,3 +1,3 @@
-require File.dirname(__FILE__) + '/sentence_splitter'
+require File.dirname(__FILE__) + '/lib/sentence_splitter'
 
 run SentenceSplitter.new
