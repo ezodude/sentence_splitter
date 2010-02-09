@@ -10,8 +10,11 @@ def opennlp
   Java::opennlp
 end
 
+SentenceDetector = opennlp.tools.lang.english.SentenceDetector
+
 class SentenceSplitter < Sinatra::Base
-  @@sentence_detector = opennlp.tools.lang.english.SentenceDetector.new(File.dirname(__FILE__) + "/EnglishSD.bin.gz")
+  @@path_to_trained_data = File.expand_path("./EnglishSD.bin.gz", File.dirname(__FILE__))
+  @@sentence_detector = SentenceDetector.new(@@path_to_trained_data)
 
   post '/' do
     sentences = @@sentence_detector.sentDetect(params[:content]).collect(&:to_s)
