@@ -1,3 +1,7 @@
 tmp/
 log/
+bin/
+cache/
+gems/
+specifications/
 sentence_splitter.war
